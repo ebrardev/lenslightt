@@ -2,6 +2,7 @@ import express from "express"
 import dotenv from "dotenv"
 import connectDB from "./db.js"
 import pageRoute from "./routes/pageRoute.js"
+import photoRoute from "./routes/photoRoute.js"
 
 dotenv.config()
 
@@ -17,6 +18,7 @@ app.set("view engine", "ejs")
 app.use(express.static("public"))
 // routes
 app.use("/", pageRoute)
+app.use("/photos", photoRoute)
 
 
 app.listen(port, () => {
